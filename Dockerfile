@@ -1,12 +1,23 @@
-FROM python:3.11-slim
+# Install nodejs version 22
+FROM node:22-alpine 
 
-WORKDIR /
+# Set working directory means (where the commands will be executed)
+WORKDIR /app 
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Copy package.json and package-lock.json to working directory
+COPY package*.json ./ 
 
-COPY . .
+# Install depedencies
+RUN npm install
 
-EXPOSE 7860
+# Copy all files to working directory
+COPY . . 
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "7860"]
+# Build the project
+RUN npm run build
+
+# Application access port, localhost:3000 or 127.0.0.1:3000 
+EXPOSE 3000 
+
+# Run the application
+CMD ["npm", "start"] 

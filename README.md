@@ -1,20 +1,19 @@
-# Todo Chatbot Backend
+# Todo Chatbot Frontend
 
-This is the backend API for the AI-powered Todo Chatbot application.
+This is the frontend for the AI-powered Todo Chatbot application.
 
 ## Tech Stack
 
-- Python 3.11+
-- FastAPI
-- SQLAlchemy
-- PostgreSQL
-- OpenAI API
+- Next.js 14
+- React 18
+- TypeScript
+- Tailwind CSS
 
 ## Setup
 
 1. Install dependencies:
    ```bash
-   pip install -r requirements.txt
+   npm install
    ```
 
 2. Set up environment variables:
@@ -23,21 +22,22 @@ This is the backend API for the AI-powered Todo Chatbot application.
    ```
    Then edit `.env` with your configuration.
 
-3. Run the application:
+3. Run the development server:
    ```bash
-   python main.py
+   npm run dev
    ```
 
-## API Endpoints
+## Pages
 
-- `POST /api/users/{user_id}/chat` - Send a message to the chatbot
+- `/` - Main chat interface
 
-## Configuration
+## Environment Variables
 
-The application can be configured using environment variables:
+- `NEXT_PUBLIC_API_BASE_URL` - Base URL for the backend API
 
-- `DATABASE_URL` - Database connection string
-- `OPENAI_API_KEY` - API key for OpenAI services
-- `CLAUDE_MODEL` - Model name for Claude AI (defaults to gpt-3.5-turbo as placeholder)
-- `SECRET_KEY` - Secret key for JWT tokens
-- `DEBUG` - Enable/disable debug mode
+## Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run linter
