@@ -2,43 +2,44 @@
 node_modules/
 __pycache__/
 *.pyc
-.env*
-venv/
 .venv/
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+venv/
 
-# Build outputs
-dist/
-build/
-coverage/
-*.log
-logs/
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
+# Environment variables
+.env*
+!.env.example
 
 # Git
 .git/
 .gitignore
 
-# Documentation
-docs/
+# OS
+.DS_Store
+Thumbs.db
 
-# Test reports
-*.xml
-*.html
-test-results/
-node_modules
-.next
-.git
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage
+coverage/
+*.lcov
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Build outputs
+build/
+dist/
+out/
+.next/
+.nuxt/
+public/dist/
+
+# Testing
+.pytest_cache/
+.tox/
